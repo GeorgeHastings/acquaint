@@ -1,6 +1,7 @@
 // Styles for FAQ Module
 
 .faq-wrapper {
+	position: relative;
 	width: 330px;
 	padding: 30px;
 	background-color: $beachbeige;
@@ -21,10 +22,10 @@
 	}
 
 	.answer {
-		display: none;
+		position: absolute;
 		margin-top: 10px;
-		transform: translateX(330px);
-		transition: 0.3s cubic-bezier(0,0,0,1);
+		transform: translateX(50px) scaleY(0);
+		transition: transform 0.25s $ease, opacity 0.25s $ease -.1s;
 		opacity: 0;
 	}
 
@@ -46,6 +47,7 @@
 	  border-radius: $borderradius;
 	  overflow: hidden;
 	  cursor: pointer;
+		transition: all 0.25s $ease;
 	}
 }
 
@@ -54,9 +56,11 @@
   background-color: $main-accent;
 
 	& + .answer {
+		position: static;
 		display: block;
-		transform: translateX(0px);
+		transform: translateX(0px) scaleY(1);
 		opacity: 1;
+		transition: transform 0.25s $ease, opacity 0.25s $ease .05s;
 	}
 }
 
@@ -315,6 +319,20 @@
 	padding: 50px;
 	text-align: center;
 	background-color: #fff;
+	transition: box-shadow 0.25s $ease;
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: inset 0 0 0 10px $main-accent;
+
+		.notification-text {
+			color: $main-accent;
+		}
+	}
+
+	a {
+		display: block;
+	}
 
 	img {
 		@extend ._circle-img;

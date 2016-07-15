@@ -31,7 +31,7 @@
   text-align: center;
   cursor: pointer;
 	white-space: nowrap;
-	transition: background-color 0.25s ease;
+	transition: background-color 0.25s $ease;
 
   &--secondary {
     @include button($secondary-accent, $solid: true);

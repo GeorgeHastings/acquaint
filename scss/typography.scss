@@ -74,6 +74,8 @@ p.sub-heading {
 
 a {
   text-decoration: none;
+  cursor: pointer;
+  color: $main-accent;
   transition: all 0.25s ease;
 
   &:hover {
@@ -122,4 +124,5 @@ a.nav-link {
   display: inline-block;
   font-size: em(24);
   margin-bottom: 30px;
+  transition: color 0.25s $ease;
 }
