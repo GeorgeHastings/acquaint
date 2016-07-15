@@ -1,0 +1,41 @@
+.loader {
+	width: 50px;
+	height: 50px;
+	border: 5px solid $main-accent;
+	overflow: hidden;
+
+	@keyframes moveWave {
+		0% {
+			transform: translate3d(-3px, 0, 0);
+		}
+		100% {
+			transform: translate3d(-87px, 0, 0);
+		}
+	}
+
+	img {
+		margin-top: 2px;
+		animation: moveWave 1s linear infinite;
+	}
+}
+
+.buoy {
+
+	@keyframes bob {
+		0% {
+			transform: translate3d(0,0,0) rotateZ(-10deg);
+		}
+		50% {
+			transform: translate3d(0,0,0) rotateZ(10deg);
+		}
+		100% {
+			transform: translate3d(0,0,0) rotateZ(-10deg);
+		}
+	}
+
+	img{
+		width: 80px;
+		transform-origin: center 90%;
+		animation: bob 2s ease-in-out infinite;
+	}
+}

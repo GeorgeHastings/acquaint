@@ -1,0 +1,105 @@
+* {box-sizing: border-box;}
+
+html,
+body {
+	height: 100%;
+	width: 100%;
+  margin: 0;
+}
+
+body {
+	font-family: 'GT-Walsheim-Pro-Light';
+	font-size: 18px;
+
+	@include media("<desktop") {
+		font-size: 16px;
+	}
+	@include media("<tablet") {
+		font-size: 14px;
+	}
+}
+
+.blue-border {
+  border-top: 10px solid $main-accent;
+  border-left: 10px solid $main-accent;
+  border-right: 10px solid $main-accent;
+  height: 100%;
+}
+
+.container {
+  height: inherit;
+	padding: 50px;
+	margin-left: 240px;
+
+	@include media("<desktop") {
+		margin-left: 0px;
+    padding: 0;
+	}
+}
+
+.header {
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.side-bar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 240px;
+	padding: 30px;
+	color: #585858;
+	font-size: 16px;
+	background-color: #000;
+
+  .logo span {
+    color: #fff;
+  }
+
+	.nav {
+		padding-left: 20px;
+	}
+
+	.nav a {
+		color: inherit;
+		line-height: 40px;
+		text-decoration: none;
+
+		&:target {
+			color: #fff;
+		}
+	}
+
+	@include media("<desktop") {
+		transform: translate3d(-240px, 0, 0);
+	}
+}
+
+section {
+	padding: 50px 0;
+}
+
+.border-wrap {
+	position: relative;
+	padding: 50px 30px 30px 30px;
+	margin-top: 50px;
+	border: 1px solid #eee;
+	background-color: #fff;
+
+	&:before {
+		position: absolute;
+		content: attr(data-type);
+		top: -20px;
+		padding: 5px 10px;
+		font-size: 14px;
+		background-color: #fff;
+		border: 1px solid #eee;
+	}
+
+  &--dark {
+    background-color: map-get($grayscale, 5);
+    border: none;
+  }
+}

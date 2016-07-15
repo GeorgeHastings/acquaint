@@ -1,0 +1,46 @@
+// Header and Navigation
+
+.header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	height: 80px;
+	padding: 0 30px;
+	line-height: 80px;
+	border-bottom: 1px solid map-get($grayscale, 2);
+
+  @include media("<tablet") {
+    background-color: $main-accent;
+  }
+}
+
+.logo {
+	font-family: 'GT-Walsheim-Pro-Bold';
+}
+
+.navigation {
+	display: flex;
+	flex-direction: row;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		margin-left: 40px;
+	}
+
+  li.separate-right {
+    margin-right: 0px;
+
+    a {
+      color: map-get($grayscale, 3);
+    }
+
+    &:after {
+      content:"|";
+      color: map-get($grayscale, 2);
+      margin-left: 40px;
+    }
+  }
+}

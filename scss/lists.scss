@@ -1,0 +1,110 @@
+.list {
+  padding-right: 0;
+  list-style-type: none;
+
+  li{
+  	position: relative;
+  }
+
+	&--numbered {
+		margin-left: 50px;
+
+		li {
+			counter-increment: step-counter;
+		}
+
+		li + li {
+			margin-top: 70px;
+		}
+
+		li:before {
+			content: counter(step-counter);
+			position: absolute;
+			left: -100px;
+			font-size: em(100);
+			line-height: 72px;
+			font-family: 'GT-Walsheim-Pro-Bold';
+			color: $deepblue;
+			padding: 3px 8px;
+			border-radius: 3px;
+ 	  }
+
+    @include media("<desktop") {
+      margin-left: 30px;
+
+      li:before {
+        left: -80px;
+        line-height: 65px;
+      }
+    }
+    @include media("<desktop") {
+
+      li:before {
+        line-height: 55px;
+      }
+    }
+    @include media("<phone") {
+      margin-left: 0;
+
+      li:before {
+        position: static;
+        line-height: 55px;
+      }
+    }
+	}
+
+	&--bulleted li {
+		counter-increment: step-counter;
+
+		& + li {
+			margin-top: 70px;
+		}
+
+		&:before {
+			content: "●";
+			position: absolute;
+			left: -50px;
+			font-size: 25px;
+			line-height: 20px;
+			font-family: 'GT-Walsheim-Pro-Bold';
+			color: $deepblue;
+			padding: 3px 8px;
+			border-radius: 3px;
+ 	 	}
+
+    @include media("<phone") {
+      &:before {
+        content: "";
+      }
+    }
+	}
+
+	&--definition {
+		list-style: none;
+		@extend .no-list;
+
+		.label {
+			color: map-get($grayscale, 3);
+		}
+
+		li {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		li + li {
+			margin-top: 15px;
+		}
+
+    @include media(">phone-landscape") {
+      max-width: 50%;
+    }
+	}
+
+  @include media("<phone") {
+    margin-left: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
