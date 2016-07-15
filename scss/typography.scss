@@ -33,12 +33,17 @@ h3 {
 }
 
 h4 {
+  font-size: em(24);
+  font-family: 'GT-Walsheim-Pro-Medium';
+}
+
+h5 {
   font-size: em(18);
   font-family: 'GT-Walsheim-Pro-Bold';
   text-transform: uppercase;
 }
 
-h5 {
+h6 {
   font-family: 'GT-Walsheim-Pro-Medium';
   font-size: 14px;
   color: map-get($grayscale, 4);
@@ -118,11 +123,4 @@ a.nav-link {
     color: $main-accent;
     text-decoration: none;
   }
-}
-
-.notification-text {
-  display: inline-block;
-  font-size: em(24);
-  margin-bottom: 30px;
-  transition: color 0.25s $ease;
 }

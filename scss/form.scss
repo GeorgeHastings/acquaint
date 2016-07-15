@@ -8,6 +8,7 @@ input[type="text"] {
   font: inherit;
   outline: none;
   transition: all 0.25s ease;
+  -webkit-appearance: none;
 
   &:focus {
     border: 1px solid $main-accent;
@@ -25,6 +26,10 @@ input[type="text"] {
     & + button {
       margin-top: 15px;
     }
+  }
+
+  & + label {
+    margin-top: 30px;
   }
 }
 
