@@ -101,5 +101,11 @@ section {
   &--dark {
     background-color: map-get($grayscale, 5);
     border: none;
+
+		&:before {
+			color: #fff;
+			border: none;
+			background-color: map-get($grayscale, 5);
+		}
   }
 }
