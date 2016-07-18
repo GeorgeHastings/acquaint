@@ -39,3 +39,29 @@
 		animation: bob 3s ease-in-out infinite;
 	}
 }
+
+.border-wrap:hover .success-icon{
+	animation: pop-in 1s $ease infinite;
+}
+
+.success-icon {
+	display: inline-block;
+	font-size: 60px;
+	color: $confirm-accent;
+	animation: pop-in 1s $ease;
+	transform-origin: 50% 50%;
+
+	@keyframes pop-in {
+		0% {
+			opacity: 0;
+			transform: scale(.25);
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+}
