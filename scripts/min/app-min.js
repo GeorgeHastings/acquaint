@@ -1,1 +1,1 @@
-"use strict";
+"use strict";var UI={resourcesOpen:!1,toggleResources:function(){UI.resourcesOpen?(document.getElementById("dropdownResources").classList.remove("open"),UI.resourcesOpen=!1):(document.getElementById("dropdownResources").classList.add("open"),UI.resourcesOpen=!0)},bindEvents:function(){document.getElementById("resourcesLink").onclick=UI.toggleResources}};UI.bindEvents();

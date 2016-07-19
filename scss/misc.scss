@@ -40,15 +40,10 @@
 	}
 }
 
-.border-wrap:hover .success-icon{
-	animation: pop-in 1s $ease infinite;
-}
-
 .success-icon {
 	display: inline-block;
 	font-size: 60px;
 	color: $confirm-accent;
-	animation: pop-in 1s $ease;
 	transform-origin: 50% 50%;
 
 	@keyframes pop-in {

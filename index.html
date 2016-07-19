@@ -135,8 +135,12 @@
 				<section id="forms">
 					<h2>Forms</h2>
 					<div class="border-wrap" data-type="Text Field">
-						<label class="input-label">Label</label>
+						<label class="input-label">Normal</label>
 						<input type="text" placeholder="Type here">
+						<label class="input-label">Invalid</label>
+						<input type="text" placeholder="Type here" required>
+						<label class="input-label">Disabled</label>
+						<input type="text" placeholder="Type here" disabled>
 					</div>
 					<div class="border-wrap" data-type="Check Boxes">
 						<div class="checkbox-group">
@@ -217,7 +221,9 @@
 						<br></br>
 						<button class="btn btn--confirm--ghost btn--small">Confirm Button Small</button>
 						<br></br>
-						<button class="btn btn--secondary btn--big">Secondary Button Big</button>
+						<button class="btn btn--main btn--big" disabled>Disabled Button</button>
+						<br></br>
+						<button class="btn btn--main--ghost btn--big" disabled>Disabled Button</button>
 					</div>
 				</section>
 				<section id="tables">
@@ -246,23 +252,32 @@
 				<section id="lists">
 					<h2>Lists</h2>
 					<div class="border-wrap" data-type="Numbered List">
-						<ol class="list list--numbered">
+						<ul class="list list--icon">
 							<li>
-								<h3>An Engineer Assesses Your Home’s Flood Resiliency</h3>
-								<p>A qualified engineering firm will take measurements of your home to assess its strength and resistance to flooding, and will issue you an elevation certificate. This comprehensive audit will make clear which resiliency measures are most appropriate for your home.</p>
+								<div class="feature-icon"><img src="http://placehold.it/100x100"></div>
+								<div>
+									<h3>An Engineer Assesses Your Home’s Flood Resiliency</h3>
+									<p>A qualified engineering firm will take measurements of your home to assess its strength and resistance to flooding, and will issue you an elevation certificate. This comprehensive audit will make clear which resiliency measures are most appropriate for your home.</p>
+								</div>
 							</li>
 							<li>
-								<h3>A Guide Helps You Explore Your Options</h3>
-								<p>After the audit, a resiliency guide will come to your home to explain what it all means for you. In that conversation, the guide will outline your options, explain tradeoffs, and show you personalized financial strategies around retrofitting.</p>
+								<div class="feature-icon"><img src="http://placehold.it/100x100"></div>
+								<div>
+									<h3>A Guide Helps You Explore Your Options</h3>
+									<p>After the audit, a resiliency guide will come to your home to explain what it all means for you. In that conversation, the guide will outline your options, explain tradeoffs, and show you personalized financial strategies around retrofitting.</p>
+								</div>
 							</li>
 							<li>
-								<h3>A Customized Resiliency Plan is Created for You</h3>
-								<p>You will be provided with a plan for your home that outlines the options that fit you best. This report can be shared with contractors, insurance agents, and others who will be helping to make your home more flood resilient for the future.  </p>
+								<div class="feature-icon"><img src="http://placehold.it/100x100"></div>
+								<div>
+									<h3>A Customized Resiliency Plan is Created for You</h3>
+									<p>You will be provided with a plan for your home that outlines the options that fit you best. This report can be shared with contractors, insurance agents, and others who will be helping to make your home more flood resilient for the future.  </p>
+								</div>
 							</li>
-						</ol>
+						</ul>
 					</div>
 					<div class="border-wrap" data-type="Bulleted List">
-						<ol class="list list--bulleted">
+						<ul class="list list--bulleted">
 							<li>
 								<h3>An Engineer Assesses Your Home’s Flood Resiliency</h3>
 								<p>A qualified engineering firm will take measurements of your home to assess its strength and resistance to flooding, and will issue you an elevation certificate. This comprehensive audit will make clear which resiliency measures are most appropriate for your home.</p>
@@ -275,7 +290,7 @@
 								<h3>A Customized Resiliency Plan is Created for You</h3>
 								<p>You will be provided with a plan for your home that outlines the options that fit you best. This report can be shared with contractors, insurance agents, and others who will be helping to make your home more flood resilient for the future.  </p>
 							</li>
-						</ol>
+						</ul>
 					</div>
 					<div class="border-wrap" data-type="Definition List">
 						<h6>Basic Info</h6>
@@ -302,9 +317,35 @@
 						<ul class="navigation" role="navigation">
 							<li class="separate-right"><a href="#navigation" class="nav-link">Espanol</a></li>
 							<li><a href="#navigation" class="nav-link"><span class="lnr lnr-magnifier"></span> Search</a></li>
-							<li><a href="#navigation" class="nav-link">Resources ▿</a></li>
+							<li><a href="#navigation" id="resourcesLink" class="nav-link">Resources ▿</a></li>
 							<li><a href="#navigation" class="nav-link nav-link--border">Log in</a></li>
 						</ul>
+						<div id="dropdownResources" class="resources">
+							<div class="resource">
+								<a href="#modules">
+									<img src="http://www.placehold.it/100x100">
+									<h4>Learn about flood insurance</h4>
+								</a>
+							</div>
+							<div class="resource">
+								<a href="#modules">
+									<img src="http://www.placehold.it/100x100">
+									<h4>Learn about resilliency</h4>
+								</a>
+							</div>
+							<div class="resource">
+								<a href="#modules">
+									<img src="http://www.placehold.it/100x100">
+									<h4>Discover programs & benefits</h4>
+								</a>
+							</div>
+							<div class="resource">
+								<a href="#modules">
+									<img src="http://www.placehold.it/100x100">
+									<h4>Find a flood insurance broker</h4>
+								</a>
+							</div>
+						</div>
 					</div>
 				</section>
 				<section id="modules">
@@ -333,10 +374,10 @@
 					</div>
 					<div class="border-wrap" data-type="Profile Action Item">
 						<div class="promo promo--action">
-							<div class="feature-icon"><img src="http://www.placehold.it/100x100"></div>
+							<div class="action-number">1</div>
 							<div>
-								<h3>Find an insurance agent</h3>
-								<p>Now that you have an insurance estimate you should book an apointment with an agent to get covered.</p>
+								<h3>Get a flood insurance estimate & learn how to reduce your risk</h3>
+								<p>We’ll ask you some more detailed information about your building to get a flood insurance estimate.</p>
 							</div>
 							<button class="btn btn--main btn--big">Learn More</button>
 						</div>
@@ -376,7 +417,7 @@
 						<div class="cards">
 							<div class="card">
 								<div class="card-img">
-									<img src="http://www.placehold.it/100x100">
+									<img src="http://www.placehold.it/150x150">
 								</div>
 								<div class="card-content">
 									<h4>Elevate your home</h4>
@@ -385,7 +426,7 @@
 							</div>
 							<div class="card">
 								<div class="card-img">
-									<img src="http://www.placehold.it/100x100">
+									<img src="http://www.placehold.it/150x150">
 								</div>
 								<div class="card-content">
 									<h4>Elevate your home</h4>
@@ -394,7 +435,7 @@
 							</div>
 							<div class="card">
 								<div class="card-img">
-									<img src="http://www.placehold.it/100x100">
+									<img src="http://www.placehold.it/150x150">
 								</div>
 								<div class="card-content">
 									<h4>Elevate your home</h4>
@@ -431,7 +472,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="border-wrap" data-type="Modal Window">
+					<div class="border-wrap" data-type="Modal Form">
 						<div class="modal-container">
 							<div class="modal">
 								<div class="close-modal"><span class="lnr lnr-cross"></span></div>
@@ -446,17 +487,26 @@
 							</div>
 						</div>
 					</div>
+					<div class="border-wrap" data-type="Modal Message">
+						<div class="modal-container">
+							<div class="modal">
+								<div class="close-modal"><span class="lnr lnr-cross"></span></div>
+								<div class="success-icon">
+									<span class="lnr lnr-checkmark-circle"></span>
+								</div>
+								<h4>Thank you for applying!</h4>
+								<p>We’ve received your application and will be reviewing it in the next two weeks. Will we send status updates to the email address you provided.
+In the meantime, learn more about flood risk and resilience at our flood help ny website.</p>
+								<button class="btn btn--confirm btn--big">See your application</button>
+							</div>
+						</div>
+					</div>
 				</section>
 				<section id="misc">
 					<h2>Miscellaneous</h2>
 					<div class="border-wrap" data-type="Pre-loader">
 						<div class="loader">
 							<img src="assets/images/wave4.svg">
-						</div>
-					</div>
-					<div class="border-wrap" data-type="Submit/Success Icon">
-						<div class="success-icon">
-							<span class="lnr lnr-checkmark-circle"></span>
 						</div>
 					</div>
 					<div class="border-wrap" data-type="Buoy">

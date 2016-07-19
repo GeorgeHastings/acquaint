@@ -3,9 +3,14 @@
 		color: #fff;
 	  background-color: $color;
 		border: none;
+
 	  &:hover {
 	    background-color: darken($color, 5%);
 	  }
+		&:disabled {
+			background-color: map-get($grayscale, 2);
+			cursor: not-allowed;
+		}
 	}
 	@if $ghost {
 		border: 1px solid $color;
@@ -16,6 +21,11 @@
 	    border: 1px solid darken($color, 5%);
 			color: darken($color, 5%);
 	  }
+		&:disabled {
+			border: 1px solid map-get($grayscale, 2);
+			cursor: not-allowed;
+			color: map-get($grayscale, 2);
+		}
 	}
 
 	&:focus {
@@ -31,7 +41,11 @@
   text-align: center;
   cursor: pointer;
 	white-space: nowrap;
-	transition: background-color 0.25s $ease;
+	transition: background-color 0.25s $ease, transform 0.1s $ease;
+
+	&:active {
+		transform: translate3d(0,2px,0);
+	}
 
   &--secondary {
     @include button($secondary-accent, $solid: true);

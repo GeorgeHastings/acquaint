@@ -1,55 +1,40 @@
 .list {
   padding-right: 0;
+  margin: 0;
   list-style-type: none;
 
   li{
   	position: relative;
   }
 
-	&--numbered {
-		margin-left: 50px;
+	&--icon {
+    padding-left: 0;
 
-		li {
-			counter-increment: step-counter;
-		}
+    li {
+      display: flex;
+      flex-direction: row;
+    }
 
 		li + li {
 			margin-top: 70px;
 		}
 
-		li:before {
-			content: counter(step-counter);
-			position: absolute;
-			left: -100px;
-			font-size: em(100);
-			line-height: 72px;
-			font-family: 'GT-Walsheim-Pro-Bold';
-			color: $deepblue;
-			padding: 3px 8px;
-			border-radius: 3px;
- 	  }
+    h3 {
+      margin-top: 0;
+    }
 
-    @include media("<desktop") {
-      margin-left: 30px;
+    @include media("<tablet") {
+      li {
+        flex-direction: column;
+      }
 
-      li:before {
-        left: -80px;
-        line-height: 65px;
+      h3 {
+        margin-top: 30px;
       }
     }
-    @include media("<desktop") {
 
-      li:before {
-        line-height: 55px;
-      }
-    }
     @include media("<phone") {
       margin-left: 0;
-
-      li:before {
-        position: static;
-        line-height: 55px;
-      }
     }
 	}
 

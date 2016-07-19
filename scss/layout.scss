@@ -109,3 +109,8 @@ section {
 		}
   }
 }
+
+.sub-section {
+	border-bottom: 1px solid map-get($grayscale, 2);
+	padding: 50px 0;
+}
