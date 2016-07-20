@@ -9,21 +9,14 @@ body {
 
 body {
 	font-family: 'GT-Walsheim-Pro-Light';
-	font-size: 18px;
+	font-size: 20px;
 
 	@include media("<desktop") {
-		font-size: 16px;
+		font-size: 18px;
 	}
 	@include media("<tablet") {
-		font-size: 14px;
+		font-size: 16px;
 	}
-}
-
-.blue-border {
-  border-top: 10px solid $main-accent;
-  border-left: 10px solid $main-accent;
-  border-right: 10px solid $main-accent;
-  height: 100%;
 }
 
 .container {
@@ -35,12 +28,6 @@ body {
 		margin-left: 0px;
     padding: 0;
 	}
-}
-
-.header {
-  height: 70px;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
 }
 
 .side-bar {
@@ -110,7 +97,52 @@ section {
   }
 }
 
+
+//////
+
+
+.header {
+  height: 70px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.blue-border {
+  border-top: 10px solid $main-accent;
+  border-left: 10px solid $main-accent;
+  border-right: 10px solid $main-accent;
+  height: auto;
+}
+
 .sub-section {
 	border-bottom: 1px solid map-get($grayscale, 2);
-	padding: 50px 0;
+	padding-bottom: 50px;
+
+	& + .sub-section {
+		padding-top: 50px;
+	}
+
+	.cards {
+		margin-top: 50px;
+	}
+}
+
+.container-rail {
+	display: flex;
+	flex-direction: row;
+
+	@include media("<tablet") {
+		flex-direction: column;
+	}
+}
+
+.content {
+	// max-width: 900px;
+	padding-top: 50px;
+	padding-left: 70px;
+	padding-right: 50px;
+
+	@include media("<tablet") {
+		padding: 30px;
+	}
 }

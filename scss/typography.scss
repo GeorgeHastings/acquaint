@@ -51,30 +51,33 @@ h6 {
 }
 
 p {
-  font-size: 18px;
+  font-size: 20px;
+  max-width: 640px;
   color: map-get($grayscale, 6);
+
+  &.sub-heading {
+    max-width: 900px;
+    font-family: 'GT-Walsheim-Pro-Light';
+    font-size: em(30);
+    color: map-get($grayscale, 5);
+  }
+
+  &.detail {
+    font-size: 18px;
+    max-width: 900px;
+    color: map-get($grayscale, 4);
+  }
+
+  &.micro {
+    font-size: 16px;
+    color: map-get($grayscale, 4);
+  }
 }
 
 p b {
   font-weight: normal;
   font-family: 'GT-Walsheim-Pro-Medium';
   color: map-get($grayscale, 6);
-}
-
-p.detail {
-  font-size: 16px;
-  color: map-get($grayscale, 4);
-}
-
-p.micro {
-  font-size: 14px;
-  color: map-get($grayscale, 4);
-}
-
-p.sub-heading {
-  font-family: 'GT-Walsheim-Pro-Light';
-  font-size: em(30);
-  color: map-get($grayscale, 5);
 }
 
 a {
