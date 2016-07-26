@@ -109,8 +109,8 @@ section {
 
 .blue-border {
   border-top: 10px solid $main-accent;
-  border-left: 10px solid $main-accent;
-  border-right: 10px solid $main-accent;
+  // border-left: 10px solid $main-accent;
+  // border-right: 10px solid $main-accent;
   height: auto;
 }
 
@@ -138,6 +138,7 @@ section {
 
 .content {
 	// max-width: 900px;
+	width: 100%;
 	padding-top: 50px;
 	padding-left: 70px;
 	padding-right: 50px;
@@ -145,4 +146,49 @@ section {
 	@include media("<tablet") {
 		padding: 30px;
 	}
+}
+
+//question flow demo
+
+.question {
+	width: 100%;
+	padding: 50px 50px 0 50px;
+
+	.radio-group {
+		animation-delay: .05s;
+	}
+
+	@include media("<tablet") {
+		padding: 30px;
+	}
+}
+
+.question-wrapper {
+	height: 100%;
+
+	.container-rail {
+		height: 100%;
+	}
+}
+
+.signpost-container {
+	min-width: 240px;
+	padding: 30px;
+	border-right: 1px solid map-get($grayscale, 1);
+}
+
+.signpost {
+	font-size: 16px;
+	line-height: 40px;
+}
+
+.button-container {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	bottom: 0;
+	width: calc(100% - 670px);
+	padding: 20px 0px;
+	border-top: 1px solid map-get($grayscale, 2);
 }

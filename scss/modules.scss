@@ -20,6 +20,12 @@
 }
 
 .faq {
+	@for $i from 1 through 50{
+	  &:nth-child(#{$i}){
+	    animation-delay:#{$i* .05s};
+	  }
+	}
+
 	.question,
 	.answer {
 		background-color: #fff;
@@ -32,7 +38,7 @@
 		position: absolute;
 		margin-top: 10px;
 		transform: translateX(50px) scaleY(0);
-		transition: transform 0.25s $ease, opacity 0.25s $ease -.1s;
+		transition: transform .25s $ease, opacity 0.25s $ease -.1s;
 		opacity: 0;
 	}
 
