@@ -39,13 +39,17 @@ body {
 
 body {
   font-family: 'GT-Walsheim-Pro-Light';
-  font-size: 20px; }
+  font-size: 20px;
+  background-color: #0047FF; }
   @media (max-width: 1023px) {
     body {
       font-size: 18px; } }
   @media (max-width: 767px) {
     body {
       font-size: 16px; } }
+
+.wrapper {
+  background-color: #fff; }
 
 .container {
   height: inherit;
@@ -138,17 +142,23 @@ section {
     .content {
       padding: 30px; } }
 
-.question {
+.question-container {
   width: 100%;
-  padding: 50px 50px 0 50px; }
-  .question .radio-group {
+  padding: 50px 50px 200px 50px;
+  overflow-y: scroll; }
+  .question-container .question {
+    display: none; }
+  .question-container .question:first-child {
+    display: block; }
+  .question-container .radio-group {
     animation-delay: .05s; }
   @media (max-width: 767px) {
-    .question {
+    .question-container {
       padding: 30px; } }
 
 .question-wrapper {
-  height: 100%; }
+  height: 100%;
+  overflow: hidden; }
   .question-wrapper .container-rail {
     height: 100%; }
 
@@ -161,7 +171,7 @@ section {
   font-size: 16px;
   line-height: 40px; }
 
-.button-container {
+.button-footer {
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -169,7 +179,8 @@ section {
   bottom: 0;
   width: calc(100% - 670px);
   padding: 20px 0px;
-  border-top: 1px solid #CBD1DC; }
+  background-color: #fff;
+  border-top: 1px solid #F3F4F7; }
 
 h1, h2, h3, h4 {
   font-weight: normal; }
@@ -309,6 +320,21 @@ a.nav-link, .show-more label.nav-link {
     .btn--secondary:focus {
       outline: none;
       box-shadow: 0 0 0 3px white; }
+  .btn--secondary--ghost {
+    border: 1px solid #CBD1DC;
+    color: #CBD1DC;
+    background-color: #fff;
+    color: #5A6987; }
+    .btn--secondary--ghost:hover {
+      border: 1px solid #bcc4d2;
+      color: #bcc4d2; }
+    .btn--secondary--ghost:disabled {
+      border: 1px solid #CBD1DC;
+      cursor: not-allowed;
+      color: #CBD1DC; }
+    .btn--secondary--ghost:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px white; }
   .btn--main {
     color: #fff;
     background-color: #0047FF;
@@ -438,11 +464,20 @@ input[type="text"], select {
 
 .radio-group {
   display: flex;
-  flex-flow: row; }
+  flex-flow: row;
+  flex-wrap: wrap;
+  font-size: 16px; }
   .radio-group--images img {
     display: block;
     width: 100%;
     margin-bottom: 30px; }
+  .radio-group--images .radio-button {
+    width: 25%; }
+    .radio-group--images .radio-button > * {
+      display: flex;
+      flex-flow: column;
+      align-items: baseline;
+      justify-content: flex-end; }
   @media (max-width: 767px) {
     .radio-group--images {
       flex-flow: row;
@@ -450,20 +485,19 @@ input[type="text"], select {
       flex-wrap: wrap; }
       .radio-group--images .radio-button {
         width: 50%; } }
-  .radio-group--images label {
-    width: 100%; }
-    @media (min-width: 769px) {
-      .radio-group--images label {
-        text-align: left; } }
-    @media (max-width: 767px) {
-      .radio-group--images label {
-        margin: -2px; } }
-    @media (min-width: 481px) {
-      .radio-group--images label {
-        padding: 30px; } }
-    @media (max-width: 479px) {
-      .radio-group--images label {
-        padding: 15px; } }
+  @media (min-width: 769px) {
+    .radio-group--images label {
+      text-align: left;
+      min-height: 300px; } }
+  @media (max-width: 767px) {
+    .radio-group--images label {
+      margin: -2px; } }
+  @media (min-width: 481px) {
+    .radio-group--images label {
+      padding: 30px; } }
+  @media (max-width: 479px) {
+    .radio-group--images label {
+      padding: 15px; } }
   .radio-group--text label {
     padding: 15px 50px;
     width: 100%; }

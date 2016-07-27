@@ -1,6 +1,28 @@
 'use strict';
 
 var UI = {
+  questionFlow: {
+    questions: document.querySelectorAll('.question'),
+    index: 0,
+    enableButton: function() {
+      console.log('it worked');
+      document.getElementById('nextQuestion').removeAttribute('disabled');
+    },
+    nextQuestion: function() {
+      UI.questionFlow.questions[UI.questionFlow.index].style.display = 'none';
+      UI.questionFlow.index++;
+      UI.questionFlow.questions[UI.questionFlow.index].style.display = 'block';
+      document.getElementById('nextQuestion').setAttribute('disabled', true);
+      UI.repaint();
+    },
+    prevQuestion: function() {
+      UI.questionFlow.questions[UI.questionFlow.index].style.display = 'none';
+      UI.questionFlow.index--;
+      UI.questionFlow.questions[UI.questionFlow.index].style.display = 'block';
+      document.getElementById('nextQuestion').removeAttribute('disabled');
+      UI.repaint();
+    }
+  },
   resourcesOpen: false,
   toggleResources: function() {
     if(UI.resourcesOpen) {
@@ -21,9 +43,17 @@ var UI = {
       elements[i].classList.add(classname);
     }
   },
+  bindToMany: function(elements, eventType, fn) {
+    var els = document.querySelectorAll(elements);
+    for(var i = 0; i < els.length; i++) {
+      els[i][eventType] = fn;
+    }
+  },
   bindEvents: function() {
     document.getElementById('resourcesLink').onclick = UI.toggleResources;
-    document.getElementById('nextQuestion').onclick = UI.repaint;
+    document.getElementById('nextQuestion').onclick = UI.questionFlow.nextQuestion;
+    document.getElementById('prevQuestion').onclick = UI.questionFlow.prevQuestion;
+    UI.bindToMany('input[type="radio"]', 'onchange', UI.questionFlow.enableButton);
   }
 };
 

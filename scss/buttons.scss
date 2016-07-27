@@ -51,6 +51,11 @@
     @include button($secondary-accent, $solid: true);
   }
 
+	&--secondary--ghost {
+    @include button($secondary-accent, $ghost: true);
+		color: map-get($grayscale, 5);
+  }
+
   &--main {
     @include button($main-accent, $solid: true);
   }

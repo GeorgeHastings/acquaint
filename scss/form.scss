@@ -91,12 +91,26 @@ input[type="text"] {
 .radio-group {
   display: flex;
   flex-flow: row;
+  flex-wrap: wrap;
+  font-size: 16px;
 
   &--images {
+
     img {
       display: block;
       width: 100%;
       margin-bottom: 30px;
+    }
+
+    .radio-button {
+      width: 25%;
+
+      & > * {
+        display: flex;
+        flex-flow: column;
+        align-items: baseline;
+        justify-content: flex-end;
+      }
     }
 
     @include media("<tablet") {
@@ -110,9 +124,9 @@ input[type="text"] {
     }
 
     label {
-      width: 100%;
       @include media(">tablet") {
         text-align: left;
+        min-height: 300px;
       }
       @include media("<tablet") {
         margin: -2px;

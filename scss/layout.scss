@@ -10,6 +10,7 @@ body {
 body {
 	font-family: 'GT-Walsheim-Pro-Light';
 	font-size: 20px;
+	background-color: $main-accent;
 
 	@include media("<desktop") {
 		font-size: 18px;
@@ -17,6 +18,10 @@ body {
 	@include media("<tablet") {
 		font-size: 16px;
 	}
+}
+
+.wrapper {
+	background-color: #fff;
 }
 
 .container {
@@ -150,9 +155,18 @@ section {
 
 //question flow demo
 
-.question {
+.question-container {
 	width: 100%;
-	padding: 50px 50px 0 50px;
+	padding: 50px 50px 200px 50px;
+	overflow-y: scroll;
+
+	.question {
+		display: none;
+	}
+
+	.question:first-child {
+		display: block;
+	}
 
 	.radio-group {
 		animation-delay: .05s;
@@ -165,6 +179,7 @@ section {
 
 .question-wrapper {
 	height: 100%;
+	overflow: hidden;
 
 	.container-rail {
 		height: 100%;
@@ -182,7 +197,7 @@ section {
 	line-height: 40px;
 }
 
-.button-container {
+.button-footer {
 	position: fixed;
 	display: flex;
 	flex-direction: row;
@@ -190,5 +205,6 @@ section {
 	bottom: 0;
 	width: calc(100% - 670px);
 	padding: 20px 0px;
-	border-top: 1px solid map-get($grayscale, 2);
+	background-color: #fff;
+	border-top: 1px solid map-get($grayscale, 1);
 }
