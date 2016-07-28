@@ -39,17 +39,13 @@ body {
 
 body {
   font-family: 'GT-Walsheim-Pro-Light';
-  font-size: 20px;
-  background-color: #0047FF; }
+  font-size: 20px; }
   @media (max-width: 1023px) {
     body {
       font-size: 18px; } }
   @media (max-width: 767px) {
     body {
       font-size: 16px; } }
-
-.wrapper {
-  background-color: #fff; }
 
 .container {
   height: inherit;
@@ -143,44 +139,95 @@ section {
       padding: 30px; } }
 
 .question-container {
-  width: 100%;
-  padding: 50px 50px 200px 50px;
-  overflow-y: scroll; }
+  width: 100%; }
   .question-container .question {
     display: none; }
   .question-container .question:first-child {
     display: block; }
   .question-container .radio-group {
     animation-delay: .05s; }
+  @media (min-width: 768px) {
+    .question-container {
+      padding: 50px 50px 200px 50px;
+      overflow-y: scroll; } }
   @media (max-width: 767px) {
     .question-container {
-      padding: 30px; } }
+      padding: 30px;
+      overflow-y: auto; } }
 
 .question-wrapper {
   height: 100%;
   overflow: hidden; }
   .question-wrapper .container-rail {
     height: 100%; }
+  @media (max-width: 767px) {
+    .question-wrapper {
+      overflow: auto; }
+      .question-wrapper .container-rail {
+        height: auto; } }
 
 .signpost-container {
   min-width: 240px;
   padding: 30px;
   border-right: 1px solid #F3F4F7; }
+  @media (max-width: 767px) {
+    .signpost-container {
+      display: none; } }
 
 .signpost {
   font-size: 16px;
   line-height: 40px; }
+  .signpost li {
+    position: relative;
+    overflow: hidden;
+    padding-left: 15px;
+    transition: color 0.25s cubic-bezier(0.52, 0.01, 0.16, 1) 0.25s; }
+    .signpost li:after {
+      transform: translate3d(0, 40px, 0); }
+    .signpost li:not(.active):after {
+      transition-delay: .05s; }
+    .signpost li + .active:after {
+      transform: translate3d(0, -40px, 0); }
+  .signpost li.active {
+    font-weight: bold; }
+    .signpost li.active:after {
+      transform: translate3d(0, 0px, 0); }
+    .signpost li.active + li:after {
+      opacity: 0;
+      transform: translate3d(0, -40px, 0);
+      transition: transform 0.5s cubic-bezier(0.52, 0.01, 0.16, 1) 0.05s, opacity 0s cubic-bezier(0.52, 0.01, 0.16, 1) 0.5s; }
+    .signpost li.active + li + li:after {
+      opacity: 0; }
+
+.sp-indicator:after, .signpost li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  background-color: #F6F5F1;
+  transition: transform 0.5s cubic-bezier(0.52, 0.01, 0.16, 1), opacity 0s cubic-bezier(0.52, 0.01, 0.16, 1); }
 
 .button-footer {
   position: fixed;
+  z-index: 99;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   bottom: 0;
-  width: calc(100% - 670px);
   padding: 20px 0px;
   background-color: #fff;
   border-top: 1px solid #F3F4F7; }
+  @media (min-width: 768px) {
+    .button-footer {
+      width: calc(100% - 640px); } }
+  @media (max-width: 767px) {
+    .button-footer {
+      left: 0;
+      width: 100%;
+      padding: 10px; } }
 
 h1, h2, h3, h4 {
   font-weight: normal; }
@@ -478,7 +525,7 @@ input[type="text"], select {
       flex-flow: column;
       align-items: baseline;
       justify-content: flex-end; }
-  @media (max-width: 767px) {
+  @media (max-width: 1023px) {
     .radio-group--images {
       flex-flow: row;
       text-align: left;
@@ -504,7 +551,7 @@ input[type="text"], select {
   @media (max-width: 767px) {
     .radio-group--text {
       flex-flow: column;
-      text-align: center; } }
+      text-align: left; } }
 
 .radio-button input[type="radio"] {
   display: none; }
@@ -659,6 +706,16 @@ select {
     height: calc(100% - 1px);
     z-index: -1;
     background-color: #fff; }
+  @media (max-width: 767px) {
+    .header {
+      height: 50px;
+      background-color: #0047FF; }
+      .header:before {
+        display: none; }
+      .header .logo {
+        color: #fff; }
+      .header .navigation {
+        display: none; } }
 
 .header .resources {
   position: absolute;
@@ -701,13 +758,18 @@ select {
 
 .faq-container {
   position: relative;
-  max-width: 330px;
-  min-width: 330px;
   padding: 30px;
   background-color: #F6F5F1;
   overflow: hidden; }
   .faq-container h6 {
     margin-top: 0; }
+  @media (min-width: 1025px) {
+    .faq-container {
+      min-width: 300px;
+      max-width: 300px; } }
+  @media (max-width: 1023px) {
+    .faq-container {
+      min-width: none; } }
   @media (max-width: 479px) {
     .faq-container {
       width: 100%;

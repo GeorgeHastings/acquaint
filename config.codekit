@@ -13,6 +13,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/basement.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13730,
+		"inputAbbreviatedPath": "\/assets\/images\/basement.png",
+		"outputAbbreviatedPath": "\/assets\/images\/basement.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/bungalow.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -20,6 +31,28 @@
 		"initialSize": 1389,
 		"inputAbbreviatedPath": "\/assets\/images\/bungalow.png",
 		"outputAbbreviatedPath": "\/assets\/images\/bungalow.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/crawlspace.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10564,
+		"inputAbbreviatedPath": "\/assets\/images\/crawlspace.png",
+		"outputAbbreviatedPath": "\/assets\/images\/crawlspace.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/csvents.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10583,
+		"inputAbbreviatedPath": "\/assets\/images\/csvents.png",
+		"outputAbbreviatedPath": "\/assets\/images\/csvents.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -46,6 +79,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/enclosure.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13261,
+		"inputAbbreviatedPath": "\/assets\/images\/enclosure.png",
+		"outputAbbreviatedPath": "\/assets\/images\/enclosure.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/images\/mobile.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5041,
+		"inputAbbreviatedPath": "\/assets\/images\/mobile.png",
+		"outputAbbreviatedPath": "\/assets\/images\/mobile.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/semidetached.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -57,11 +112,22 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/images\/sgcs.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 13997,
+		"inputAbbreviatedPath": "\/assets\/images\/sgcs.png",
+		"outputAbbreviatedPath": "\/assets\/images\/sgcs.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/images\/walkup.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 3878,
+		"initialSize": 3828,
 		"inputAbbreviatedPath": "\/assets\/images\/walkup.png",
 		"outputAbbreviatedPath": "\/assets\/images\/walkup.png",
 		"outputPathIsOutsideProject": 0,

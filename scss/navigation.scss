@@ -23,6 +23,23 @@
 		z-index: -1;
 		background-color: #fff;
 	}
+
+	@include media("<tablet") {
+		height: 50px;
+		background-color: $main-accent;
+
+		&:before {
+			display: none;
+		}
+
+		.logo {
+			color: #fff;
+		}
+
+		.navigation {
+			display: none;
+		}
+	}
 }
 
 .header .resources {

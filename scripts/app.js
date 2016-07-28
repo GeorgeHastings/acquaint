@@ -2,6 +2,7 @@
 
 var UI = {
   questionFlow: {
+    signposts: document.querySelectorAll('.signpost li'),
     questions: document.querySelectorAll('.question'),
     index: 0,
     enableButton: function() {
@@ -13,6 +14,7 @@ var UI = {
       UI.questionFlow.index++;
       UI.questionFlow.questions[UI.questionFlow.index].style.display = 'block';
       document.getElementById('nextQuestion').setAttribute('disabled', true);
+      UI.questionFlow.updateSignPost();
       UI.repaint();
     },
     prevQuestion: function() {
@@ -20,7 +22,14 @@ var UI = {
       UI.questionFlow.index--;
       UI.questionFlow.questions[UI.questionFlow.index].style.display = 'block';
       document.getElementById('nextQuestion').removeAttribute('disabled');
+      UI.questionFlow.updateSignPost();
       UI.repaint();
+    },
+    updateSignPost: function() {
+      for (var i = 0; i < UI.questionFlow.signposts.length; i++) {
+        UI.questionFlow.signposts[i].classList.remove('active');
+      }
+      UI.questionFlow.signposts[UI.questionFlow.index].classList.add('active');
     }
   },
   resourcesOpen: false,

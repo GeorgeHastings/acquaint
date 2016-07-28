@@ -2,14 +2,24 @@
 
 .faq-container {
 	position: relative;
-	max-width: 330px;
-	min-width: 330px;
 	padding: 30px;
 	background-color: $beachbeige;
 	overflow: hidden;
 
 	h6 {
 		margin-top: 0;
+	}
+
+	@include media(">desktop") {
+		min-width: 300px;
+		max-width: 300px;
+		// width: 50%;
+	}
+
+	@include media("<desktop") {
+		// width: 30%;
+		// max-width: none;
+		min-width: none;
 	}
 
 	@include media("<phone") {

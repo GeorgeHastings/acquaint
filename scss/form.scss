@@ -113,7 +113,7 @@ input[type="text"] {
       }
     }
 
-    @include media("<tablet") {
+    @include media("<desktop") {
       flex-flow: row;
       text-align: left;
       flex-wrap: wrap;
@@ -149,7 +149,7 @@ input[type="text"] {
 
     @include media("<tablet") {
       flex-flow: column;
-      text-align: center;
+      text-align: left;
     }
   }
 }

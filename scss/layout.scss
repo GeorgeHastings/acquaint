@@ -10,7 +10,7 @@ body {
 body {
 	font-family: 'GT-Walsheim-Pro-Light';
 	font-size: 20px;
-	background-color: $main-accent;
+	// background-color: $main-accent;
 
 	@include media("<desktop") {
 		font-size: 18px;
@@ -21,7 +21,7 @@ body {
 }
 
 .wrapper {
-	background-color: #fff;
+	// background-color: #fff;
 }
 
 .container {
@@ -157,8 +157,6 @@ section {
 
 .question-container {
 	width: 100%;
-	padding: 50px 50px 200px 50px;
-	overflow-y: scroll;
 
 	.question {
 		display: none;
@@ -172,8 +170,14 @@ section {
 		animation-delay: .05s;
 	}
 
+	@include media(">=tablet") {
+		padding: 50px 50px 200px 50px;
+		overflow-y: scroll;
+	}
+
 	@include media("<tablet") {
 		padding: 30px;
+		overflow-y: auto;
 	}
 }
 
@@ -184,27 +188,107 @@ section {
 	.container-rail {
 		height: 100%;
 	}
+
+	@include media("<tablet") {
+		overflow: auto;
+
+		.container-rail {
+			height: auto;
+		}
+	}
 }
 
 .signpost-container {
 	min-width: 240px;
 	padding: 30px;
 	border-right: 1px solid map-get($grayscale, 1);
+
+	@include media("<tablet") {
+		display: none;
+	}
 }
 
 .signpost {
 	font-size: 16px;
 	line-height: 40px;
+
+	li {
+		position: relative;
+		overflow: hidden;
+		padding-left: 15px;
+		transition: color .25s $ease .25s;
+
+		&:after {
+			transform: translate3d(0, 40px, 0);
+			@extend .sp-indicator;
+		}
+
+		&:not(.active):after {
+			transition-delay: .05s;
+		}
+
+		& + .active {
+			&:after {
+				transform: translate3d(0, -40px, 0);
+			}
+		}
+	}
+
+	li.active {
+		font-weight: bold;
+
+		&:after {
+			transform: translate3d(0, 0px, 0);
+		}
+
+		& + li {
+			&:after {
+				opacity: 0;
+				transform: translate3d(0, -40px, 0);
+				transition: transform .5s $ease .05s, opacity 0s $ease .5s;
+			}
+		}
+
+		& + li + li {
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.sp-indicator {
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		height: 100%;
+		width: 100%;
+		background-color: $beachbeige;
+		transition: transform .5s $ease, opacity 0s $ease;
+	}
 }
 
 .button-footer {
 	position: fixed;
+	z-index: 99;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	bottom: 0;
-	width: calc(100% - 670px);
 	padding: 20px 0px;
 	background-color: #fff;
 	border-top: 1px solid map-get($grayscale, 1);
+
+	@include media(">=tablet") {
+		width: calc(100% - 640px);
+	}
+
+	@include media("<tablet") {
+		left: 0;
+		width: 100%;
+		padding: 10px;
+	}
 }
