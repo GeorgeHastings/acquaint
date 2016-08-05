@@ -21,10 +21,9 @@ $confirm-accent: $sourapple;
 
 $borderradius: 3px;
 
-$easing: cubic-bezier(0.52, 0.01, 0.16, 1);
-$mordrian: cubic-bezier(0.52, 0.01, 0.16, 1);
+$modrian: cubic-bezier(0.52, 0.01, 0.16, 1);
 $hard: cubic-bezier(0,0,0,1);
-$ease: $mordrian;
+$ease: $modrian;
 
 $breakpoints: (phone: 480px,
                tablet: 768px,

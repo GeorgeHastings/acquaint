@@ -117,6 +117,7 @@
 
     h3 {
       margin-top: 0;
+			margin-right: 30px;
     }
 
     p {
@@ -141,6 +142,7 @@
 			}
 			h3 {
 				margin-top: 30px;
+				margin-right: 0;
 			}
 		}
   }
@@ -176,6 +178,7 @@
 
   &--warning {
     align-items: top;
+		justify-content: flex-start;
     background-color: lighten($pinkberry, 40%);
     @extend .main-well;
 
@@ -274,7 +277,6 @@
 }
 
 .main-well {
-  max-width: 900px;
   padding: 30px;
 
 	@include media("<tablet") {
@@ -518,5 +520,87 @@
 	button {
 		width: 100%;
 		margin-top: 50px;
+	}
+}
+
+//signpost
+
+.signpost-container {
+	min-width: 240px;
+	max-width: 240px;
+	padding: 30px;
+	border-right: 1px solid map-get($grayscale, 1);
+
+	@include media("<tablet") {
+		display: none;
+	}
+}
+
+.signpost {
+	font-size: 16px;
+	line-height: 40px;
+
+	li {
+		position: relative;
+		overflow: hidden;
+		padding-left: 15px;
+		transition: color .25s $ease .25s;
+
+		span {
+			position: relative;
+			z-index: 1;
+		}
+
+		&:after {
+			transform: translate3d(0, 40px, 0);
+			z-index: 0;
+			@extend .sp-indicator;
+		}
+
+		&:not(.active):after {
+			transition-delay: .05s;
+		}
+
+		& + .active {
+			&:after {
+				transform: translate3d(0, -40px, 0);
+			}
+		}
+	}
+
+	li.active {
+		font-weight: bold;
+
+		&:after {
+			transform: translate3d(0, 0px, 0);
+		}
+
+		& + li {
+			&:after {
+				opacity: 0;
+				transform: translate3d(0, -40px, 0);
+				transition: transform .5s $ease .05s, opacity 0s $ease .5s;
+			}
+		}
+
+		& + li + li {
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+}
+
+.sp-indicator {
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $beachbeige;
+		transition: transform .5s $ease, opacity 0s $ease;
 	}
 }

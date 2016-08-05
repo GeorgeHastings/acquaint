@@ -1,122 +1,29 @@
-* {box-sizing: border-box;}
-
-html,
-body {
-	height: 100%;
-	width: 100%;
-  margin: 0;
-}
-
-body {
-	font-family: 'GT-Walsheim-Pro-Light';
-	font-size: 20px;
-	// background-color: $main-accent;
-
-	@include media("<desktop") {
-		font-size: 18px;
-	}
-	@include media("<tablet") {
-		font-size: 16px;
-	}
-}
 
 .wrapper {
-	// background-color: #fff;
-}
+	padding-top: 80px;
 
-.container {
-  height: inherit;
-	padding: 50px;
-	margin-left: 240px;
-
-	@include media("<desktop") {
-		margin-left: 0px;
-    padding: 0;
+	&.blue-border {
+	  border-left: 10px solid $main-accent;
+	  border-right: 10px solid $main-accent;
+	  height: auto;
 	}
 }
 
-.side-bar {
-	position: fixed;
-	left: 0;
-	top: 0;
-	height: 100vh;
-	width: 240px;
-	padding: 30px;
-	color: #585858;
-	font-size: 16px;
-	background-color: #000;
+.wrapper.question-wrapper {
+	height: 100%;
+	overflow: hidden;
 
-  .logo span {
-    color: #fff;
-  }
-
-	.nav {
-		padding-left: 20px;
+	.container-rail {
+		height: 100%;
 	}
 
-	.nav a {
-		color: inherit;
-		line-height: 40px;
-		text-decoration: none;
+	@include media("<tablet") {
+		overflow: auto;
 
-		&:target {
-			color: #fff;
+		.container-rail {
+			height: auto;
 		}
 	}
-
-	@include media("<desktop") {
-		transform: translate3d(-240px, 0, 0);
-	}
-}
-
-section {
-	padding: 50px 0;
-}
-
-.border-wrap {
-	position: relative;
-	padding: 50px 30px 30px 30px;
-	margin-top: 50px;
-	border: 1px solid #eee;
-	background-color: #fff;
-
-	&:before {
-		position: absolute;
-		content: attr(data-type);
-		top: -20px;
-		padding: 5px 10px;
-		font-size: 14px;
-		background-color: #fff;
-		border: 1px solid #eee;
-	}
-
-  &--dark {
-    background-color: map-get($grayscale, 5);
-    border: none;
-
-		&:before {
-			color: #fff;
-			border: none;
-			background-color: map-get($grayscale, 5);
-		}
-  }
-}
-
-
-//////
-
-
-.header {
-  height: 70px;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-}
-
-.blue-border {
-  border-top: 10px solid $main-accent;
-  // border-left: 10px solid $main-accent;
-  // border-right: 10px solid $main-accent;
-  height: auto;
 }
 
 .sub-section {
@@ -142,7 +49,6 @@ section {
 }
 
 .content {
-	// max-width: 900px;
 	width: 100%;
 	padding-top: 50px;
 	padding-left: 70px;
@@ -178,96 +84,6 @@ section {
 	@include media("<tablet") {
 		padding: 30px;
 		overflow-y: auto;
-	}
-}
-
-.question-wrapper {
-	height: 100%;
-	overflow: hidden;
-
-	.container-rail {
-		height: 100%;
-	}
-
-	@include media("<tablet") {
-		overflow: auto;
-
-		.container-rail {
-			height: auto;
-		}
-	}
-}
-
-.signpost-container {
-	min-width: 240px;
-	padding: 30px;
-	border-right: 1px solid map-get($grayscale, 1);
-
-	@include media("<tablet") {
-		display: none;
-	}
-}
-
-.signpost {
-	font-size: 16px;
-	line-height: 40px;
-
-	li {
-		position: relative;
-		overflow: hidden;
-		padding-left: 15px;
-		transition: color .25s $ease .25s;
-
-		&:after {
-			transform: translate3d(0, 40px, 0);
-			@extend .sp-indicator;
-		}
-
-		&:not(.active):after {
-			transition-delay: .05s;
-		}
-
-		& + .active {
-			&:after {
-				transform: translate3d(0, -40px, 0);
-			}
-		}
-	}
-
-	li.active {
-		font-weight: bold;
-
-		&:after {
-			transform: translate3d(0, 0px, 0);
-		}
-
-		& + li {
-			&:after {
-				opacity: 0;
-				transform: translate3d(0, -40px, 0);
-				transition: transform .5s $ease .05s, opacity 0s $ease .5s;
-			}
-		}
-
-		& + li + li {
-			&:after {
-				opacity: 0;
-			}
-		}
-	}
-}
-
-.sp-indicator {
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		height: 100%;
-		width: 100%;
-		background-color: $beachbeige;
-		transition: transform .5s $ease, opacity 0s $ease;
 	}
 }
 
