@@ -9,7 +9,6 @@ var UI = {
     questions: document.querySelectorAll('.question'),
     index: 0,
     enableButton: function() {
-      console.log('it worked');
       document.getElementById('nextQuestion').removeAttribute('disabled');
     },
     nextQuestion: function() {
