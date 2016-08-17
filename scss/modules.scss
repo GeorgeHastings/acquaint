@@ -182,7 +182,8 @@
 		}
 	}
 
-  &--feature {
+  &--feature,
+	&--final {
     align-items: center;
     padding: 30px;
     border: 10px solid rgba(0, 71, 255, .25);
@@ -196,6 +197,11 @@
 			align-items: stretch;
 		}
   }
+
+	&--final {
+		background-color: $beachbeige;
+		border: none;
+	}
 
   &--action {
     align-items: top;
