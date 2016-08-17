@@ -801,6 +801,69 @@ select {
   display: flex;
   flex-flow: row;
   justify-content: space-between; }
+  .promo--rate {
+    flex-flow: row wrap;
+    padding: 50px;
+    border: 10px solid #F6F5F1; }
+    .promo--rate .map-type {
+      color: #F11E54;
+      font-size: 0.8888888889em; }
+    .promo--rate .rate,
+    .promo--rate .arrow-icon {
+      flex: 3 auto; }
+    .promo--rate .rate-amt {
+      font-size: 3.8888888889em;
+      font-family: 'GT-Walsheim-Pro-Bold'; }
+    .promo--rate .rate-amt:after {
+      content: "Per year*";
+      display: inline-block;
+      width: 50px;
+      margin-left: 15px;
+      padding-left: 15px;
+      font-size: 26px !important;
+      font-family: 'GT-Walsheim-Pro-Medium';
+      border-left: 1px solid black; }
+    .promo--rate .arrow-icon {
+      max-width: 50px;
+      min-width: 50px;
+      height: 50px;
+      text-align: center;
+      line-height: 50px;
+      margin-right: 50px;
+      margin-top: 50px;
+      border-radius: 50%;
+      border: 1px solid #CBD1DC;
+      transition: transform 0.3s cubic-bezier(0.52, 0.01, 0.16, 1); }
+    .promo--rate p {
+      flex: 1 auto;
+      margin: 15px auto 5px auto;
+      width: 100%;
+      text-align: center; }
+    .promo--rate p + p {
+      margin-top: 0; }
+    @media (max-width: 767px) {
+      .promo--rate {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; }
+        .promo--rate .rate-amt:after {
+          width: 100px;
+          margin-left: 15px;
+          padding-left: 15px;
+          vertical-align: middle;
+          font-size: 20px !important; }
+        .promo--rate .arrow-icon {
+          margin-right: 0;
+          margin-bottom: 30px;
+          margin-top: 15px;
+          transform: rotateZ(90deg); } }
+    @media (max-width: 479px) {
+      .promo--rate .rate-amt:after {
+        margin: 0 auto;
+        padding: 0;
+        font-size: 16px !important;
+        border-left: none; } }
   .promo--feature {
     align-items: center;
     padding: 30px;
@@ -840,6 +903,9 @@ select {
     @media (min-width: 769px) {
       .promo--signup h4 {
         margin-top: 0; } }
+    @media (max-width: 767px) {
+      .promo--signup .feature-icon {
+        display: none; } }
   .promo--estimate {
     background-color: #c3f7d4; }
     .promo--estimate p {

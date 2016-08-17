@@ -95,6 +95,93 @@
   flex-flow: row;
   justify-content: space-between;
 
+	&--rate {
+		flex-flow: row wrap;
+		padding: 50px;
+		border: 10px solid $beachbeige;
+
+		.map-type {
+			color: $pinkberry;
+			font-size: em(16);
+		}
+
+		.rate,
+		.arrow-icon {
+			flex: 3 auto;
+		}
+
+		.rate-amt {
+			font-size: em(70);
+			font-family: 'GT-Walsheim-Pro-Bold';
+		}
+
+		.rate-amt:after {
+			content: "Per year*";
+			display: inline-block;
+			width: 50px;
+			margin-left: 15px;
+			padding-left: 15px;
+			font-size: 26px !important;
+			font-family: 'GT-Walsheim-Pro-Medium';
+			border-left: 1px solid black;
+		}
+
+		.arrow-icon {
+			max-width: 50px;
+			min-width: 50px;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			margin-right: 50px;
+			margin-top: 50px;
+			border-radius: 50%;
+			border: 1px solid map-get($grayscale, 2);
+			transition: transform 0.3s $ease;
+		}
+
+		p {
+			flex: 1 auto;
+			margin: 15px auto 5px auto;
+			width: 100%;
+			text-align: center;
+		}
+
+		p + p {
+			margin-top: 0;
+		}
+
+		@include media("<tablet") {
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+
+			.rate-amt:after {
+				width: 100px;
+				margin-left: 15px;
+				padding-left: 15px;
+				vertical-align: middle;
+				font-size: 20px !important;
+			}
+
+			.arrow-icon {
+				margin-right: 0;
+				margin-bottom: 30px;
+				margin-top: 15px;
+				transform: rotateZ(90deg);
+			}
+		}
+
+		@include media("<phone") {
+			.rate-amt:after {
+				margin: 0 auto;
+				padding: 0;
+				font-size: 16px !important;
+				border-left: none;
+			}
+		}
+	}
+
   &--feature {
     align-items: center;
     padding: 30px;
@@ -154,6 +241,12 @@
 		@include media(">tablet") {
 			h4 {
 				margin-top: 0;
+			}
+		}
+
+		@include media("<tablet") {
+			.feature-icon {
+				display: none;
 			}
 		}
   }
