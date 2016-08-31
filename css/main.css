@@ -158,7 +158,7 @@ p {
     font-size: 18px;
     max-width: 900px;
     color: #7B8AA7; }
-  p.micro {
+  p.micro, .step:after {
     font-size: 16px;
     color: #7B8AA7; }
 
@@ -1033,6 +1033,62 @@ select {
       .cards img {
         margin-bottom: 15px; } }
 
+.progression-viz {
+  position: relative;
+  display: inline-block;
+  width: 100%; }
+  .progression-viz:before, .progression-viz:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    margin-top: -2.5px;
+    height: 5px;
+    background-color: #F3F4F7; }
+  .progression-viz:before {
+    width: 100%;
+    background-color: #F3F4F7; }
+  .progression-viz:after {
+    background-color: #1BD357; }
+  .progression-viz.step2:after {
+    width: 33%; }
+  .progression-viz.step3:after {
+    width: 66%; }
+  .progression-viz.step4:after {
+    width: 100%; }
+  .progression-viz.step5:after {
+    width: 100%; }
+
+.step-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.step {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 15px #fff;
+  text-align: center;
+  line-height: 60px;
+  border: 5px solid #F3F4F7;
+  background-color: #fff; }
+  .step.current, .progression-viz.step1 .step:nth-child(1), .progression-viz.step2 .step:nth-child(2), .progression-viz.step3 .step:nth-child(3), .progression-viz.step4 .step:nth-child(4) {
+    border: 5px solid #1BD357; }
+  .step.complete, .progression-viz.step2 .step:nth-child(1), .progression-viz.step3 .step:nth-child(1),
+  .progression-viz.step3 .step:nth-child(2), .progression-viz.step4 .step:nth-child(1),
+  .progression-viz.step4 .step:nth-child(2),
+  .progression-viz.step4 .step:nth-child(3), .progression-viz.step5 .step:nth-child(1),
+  .progression-viz.step5 .step:nth-child(2),
+  .progression-viz.step5 .step:nth-child(3),
+  .progression-viz.step5 .step:nth-child(4) {
+    background-color: #1BD357;
+    border: none; }
+  .step:after {
+    content: attr(data-step);
+    display: inline-block;
+    white-space: nowrap; }
+
 .resources {
   display: flex;
   flex-direction: row;
@@ -1314,8 +1370,7 @@ section {
   position: relative;
   padding: 50px 30px 30px 30px;
   margin-top: 50px;
-  border: 1px solid #eee;
-  background-color: #fff; }
+  border: 1px solid #eee; }
   .border-wrap:before {
     position: absolute;
     content: attr(data-type);
