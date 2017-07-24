@@ -1,0 +1,219 @@
+* {
+  box-sizing: border-box; }
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #A3ADC2; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #A3ADC2; }
+
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #A3ADC2; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #A3ADC2; }
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  backface-visibility: hidden;
+  color: #7B8AA7; }
+
+h1, h2 {
+  color: #252B37; }
+
+h3 {
+  font-weight: 400; }
+
+.wrapper {
+  max-width: 600px;
+  margin: 0 auto; }
+
+section {
+  padding: 100px 0; }
+
+input[type="text"] {
+  display: block;
+  height: 60px;
+  width: 100%;
+  padding: 0 15px;
+  border: 1px solid #CBD1DC;
+  border-radius: 3px;
+  background-color: #fff;
+  font: inherit;
+  outline: none;
+  transition: all 0.25s ease;
+  -webkit-appearance: none; }
+  input[type="text"]:focus {
+    border: 1px solid #0047FF;
+    box-shadow: inset 0 0 0 1px #0047FF; }
+
+pre {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  padding: 15px;
+  overflow-x: scroll;
+  color: #3F4A5F;
+  background-color: #F3F4F7; }
+
+.acquaint-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  z-index: 2;
+  max-width: 22em;
+  min-width: 22em;
+  padding: 1em;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  background-color: #252B37;
+  color: #fff;
+  border-radius: 3px;
+  animation: bounce 2s cubic-bezier(0, 0, 0, 1) infinite;
+  backface-visibility: hidden; }
+  .acquaint-card .acquaint-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    opacity: 0.6;
+    z-index: 999;
+    cursor: pointer; }
+  .acquaint-card .acquaint-header {
+    width: 100%;
+    font-size: 0.8em;
+    order: 1;
+    opacity: 0.6;
+    text-transform: uppercase; }
+  .acquaint-card .acquaint-text {
+    order: 2;
+    width: 100%;
+    margin-top: 1em;
+    opacity: 1; }
+    .acquaint-card .acquaint-text img {
+      width: 100%; }
+  .acquaint-card .acquaint-button {
+    display: table;
+    order: 3;
+    padding: 5px 20px;
+    margin-top: 2em;
+    background-color: #fff;
+    color: #252B37;
+    border-radius: 3px;
+    cursor: pointer; }
+    .acquaint-card .acquaint-button:hover {
+      font-weight: bold; }
+  .acquaint-card.completed {
+    transform: rotateY(180deg);
+    animation: complete 1s cubic-bezier(0, 1, 0, 1), bounce 2s cubic-bezier(0, 0, 0, 1) infinite, close 0.3s cubic-bezier(0, 1, 0, 1) 1s;
+    animation-fill-mode: forwards;
+    backface-visibility: hidden !important;
+    color: #252B37; }
+    .acquaint-card.completed:before {
+      position: absolute;
+      top: calc(50% - 1.6em);
+      content: attr(data-complete);
+      max-width: 17em;
+      min-width: 17em;
+      background-color: #1affa3;
+      margin-top: -0.4em;
+      padding: 1em;
+      transform: rotateX(180deg);
+      text-align: center; }
+
+@keyframes enter {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, -2px, 0); }
+  50% {
+    transform: translate3d(0, 2px, 0); }
+  100% {
+    transform: translate3d(0, -2px, 0); } }
+
+@keyframes complete {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(180deg); } }
+
+@keyframes close {
+  0% {
+    transform: scaleY(1) rotateX(180deg); }
+  100% {
+    transform: scaleY(0) rotateX(180deg); } }
+
+.aquaint-minimized {
+  position: fixed;
+  bottom: 0;
+  right: 2.2em;
+  padding: 1em;
+  line-height: 1em;
+  font-size: 0.6em;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #252B37;
+  cursor: pointer;
+  animation-fill-mode: forwards;
+  animation: peekup 0.3s cubic-bezier(0, 0, 0, 1); }
+
+@keyframes peekup {
+  0% {
+    transform: translate3d(0, 2.2em, 0); }
+  100% {
+    transform: translate3d(0, 0em, 0); } }
+
+.radio-group {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  font-size: 16px; }
+  .radio-group--images img {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px; }
+  .radio-group--images .radio-button {
+    width: 25%; }
+    .radio-group--images .radio-button > * {
+      display: flex;
+      flex-flow: column;
+      align-items: baseline;
+      justify-content: flex-end; }
+  .radio-group--text label {
+    padding: 15px 50px;
+    width: 100%; }
+
+.radio-button input[type="radio"] {
+  display: none; }
+
+.radio-button label {
+  display: inline-block;
+  margin: 0;
+  background-color: #fff;
+  border: 1px solid #CBD1DC;
+  font-size: em(18);
+  font-weight: 500;
+  border-radius: 3px;
+  transition: all 0.25s ease;
+  overflow: hidden; }
+
+.radio-button input[type="radio"]:checked + label {
+  color: #0047FF;
+  border: 1px solid #0047FF;
+  box-shadow: inset 0 0 0 2px #0047FF; }

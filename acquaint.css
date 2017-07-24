@@ -1,0 +1,90 @@
+.acquaint-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  z-index: 2;
+  max-width: 22em;
+  min-width: 22em;
+  padding: 1em;
+  font-size: 0.8em;
+  line-height: 1.5em;
+  background-color: #222;
+  color: #fff;
+  border-radius: 3px;
+  animation: bounce 2s cubic-bezier(0, 0, 0, 1) infinite;
+  backface-visibility: hidden; }
+  .acquaint-card .acquaint-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    opacity: 0.6;
+    z-index: 999;
+    cursor: pointer; }
+  .acquaint-card .acquaint-header {
+    width: 100%;
+    font-size: 0.8em;
+    order: 1;
+    opacity: 0.6;
+    text-transform: uppercase; }
+  .acquaint-card .acquaint-text {
+    order: 2;
+    width: 100%;
+    margin-top: 1em;
+    opacity: 1; }
+    .acquaint-card .acquaint-text img {
+      width: 100%; }
+  .acquaint-card .acquaint-button {
+    display: table;
+    order: 3;
+    padding: 5px 20px;
+    margin-top: 2em;
+    background-color: #fff;
+    color: #222;
+    border-radius: 3px;
+    cursor: pointer; }
+    .acquaint-card .acquaint-button:hover {
+      font-weight: bold; }
+  .acquaint-card.completed {
+    transform: rotateY(180deg);
+    animation: complete 1s cubic-bezier(0, 1, 0, 1), bounce 2s cubic-bezier(0, 0, 0, 1) infinite, close 0.3s cubic-bezier(0, 1, 0, 1) 1s;
+    animation-fill-mode: forwards;
+    backface-visibility: hidden !important;
+    color: #222; }
+    .acquaint-card.completed:before {
+      position: absolute;
+      top: calc(50% - 1.6em);
+      content: attr(data-complete);
+      max-width: 17em;
+      min-width: 17em;
+      background-color: MediumSpringGreen;
+      margin-top: -0.4em;
+      padding: 1em;
+      transform: rotateX(180deg);
+      text-align: center; }
+
+@keyframes enter {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, -2px, 0); }
+  50% {
+    transform: translate3d(0, 2px, 0); }
+  100% {
+    transform: translate3d(0, -2px, 0); } }
+
+@keyframes complete {
+  0% {
+    transform: rotateX(0deg); }
+  100% {
+    transform: rotateX(180deg); } }
+
+@keyframes close {
+  0% {
+    transform: scaleY(1) rotateX(180deg); }
+  100% {
+    transform: scaleY(0) rotateX(180deg); } }

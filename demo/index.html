@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Acquaint.js</title>
+		<link rel="stylesheet" href="css/main.css" media="screen">
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+		<link rel="stylesheet" href="css/prism.css" media="screen">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+	</head>
+	<body>
+		<div id="app" class="wrapper">
+			<div class="emblem"></div>
+			<section class="intro">
+				<h1>Acquaint.js</h1>
+				<p>Easily create onboarding flows, tutorials, product tours, or any other guided digital experience.</p>
+
+			</section>
+			<section class="demo">
+				<h2>Demo 1</h2>
+				<p>What's your name?</p>
+				<input id="userName" type="text" placeholder="My name is...">
+			</section>
+			<section class="demo">
+				<h2>Demo 2</h2>
+				<p>How are you feeling today?</p>
+				<div class="radio-group radio-group--text">
+					<div class="radio-button">
+						<input id="radio1" type="radio" name="radiobuttons" value="ok">
+						<label for="radio1">OK</label>
+					</div>
+					<div class="radio-button">
+						<input id="radio2" type="radio" name="radiobuttons" value="great">
+						<label for="radio2">Great</label>
+					</div>
+					<div class="radio-button">
+						<input id="radio3" type="radio" name="radiobuttons" value="whatever">
+						<label for="radio3">Whatever</label>
+					</div>
+				</div>
+			</section>
+			<section class="demo">
+				<h2>The code</h2>
+				<pre>
+					<code>
+var intro = new Acquaint([
+  {
+    title: 'Welcome',
+    message: 'Welcome to Acquaint. This floating box is what a step looks like.',
+    button: 'Next',
+    target: '.intro p',
+    position: 'bottom-left'
+  },
+  {
+    title: 'Navigating',
+    message: 'While "next" buttons are nice, it\'s much more compelling to advance by doing things. For instance, scroll down to the demo.',
+    target: '.intro p',
+    position: 'bottom-left',
+    advance: {
+      element: window,
+      event: 'onscroll',
+      condition: () => {return window.scrollY > 30;}
+    },
+  },
+  {
+    title: 'Your Name',
+    message: 'Learning by doing is much better right? Try typing your name in that field and press enter.',
+    target: '.demo input',
+    position: 'top-right',
+    advance: {
+      element: '.demo input',
+      event: 'onkeyup',
+      condition: (e) => {return e.keyCode === 13;}
+    },
+  },
+  {
+    title: 'Reading Data',
+    message: () => {return `Hello ${document.getElementById('userName').value}! Acquaint can get user input dynamically as you move through.`;},
+    button: 'What else?',
+    target: '.demo input',
+    position: 'top-left',
+  },
+  {
+    title: 'Other Inputs',
+    message: 'Try choosing one of these next.',
+    target: '.radio-group',
+    position: 'top-right',
+    advance: {
+      element: '.radio-group',
+      event: 'onchange'
+    },
+  },
+  {
+    title: 'Variable Messages',
+    message: () => {
+      var radiogroup = document.querySelector('input[name="radiobuttons"]:checked');
+      var response;
+      switch(radiogroup.value) {
+        case 'ok': {
+          response = 'OK isn\'t bad. Good news is';
+          break;
+        }
+        case 'great': {
+          response = 'That\'s great! So is the fact that';
+          break;
+        }
+        case 'whatever': {
+          response = 'One thing that isn\'t whatever is that';
+          break;
+        }
+      }
+      return response += ' messages can return variable outcomes.';
+    },
+    button: 'Cool',
+    target: '.radio-group',
+    position: 'top-right',
+  }
+]);
+
+intro.init();
+					</code>
+				</pre>
+			</section>
+		</div>
+		<script src="scripts/acquaint.js"></script>
+		<script src="scripts/app.js"></script>
+	</body>
+</html>
